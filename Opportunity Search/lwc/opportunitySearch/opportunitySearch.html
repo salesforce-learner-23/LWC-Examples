@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Opportunity Search" icon-name="standard:opportunities">
+        <div class="slds-m-around_medium">
+            <lightning-combobox
+                name="stage"
+                label="Select Stage"
+                value={stage}
+                placeholder="Choose a stage..."
+                options={stageOptions}
+                onchange={handleStageChange}>
+            </lightning-combobox>
+            
+            <div if:true={opps.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={opps}
+                    columns={columns}
+                    hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+            
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">
+                    No opportunities found for this stage.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
