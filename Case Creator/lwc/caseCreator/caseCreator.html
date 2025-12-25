@@ -1,3 +1,9 @@
 <template>
-    
+    <lightning-card title="Create Case">
+        <div class="slds-p-around_medium">
+            <lightning-input name="caseSubject" label="Subject" oninput={handleChange}></lightning-input>
+            <lightning-input name="caseDesc" label="Description" oninput={handleChange}></lightning-input>
+            <lightning-button label="Create Case" onclick={createCaseNow} class="slds-m-top_small"></lightning-button>
+        </div>
+    </lightning-card>
 </template>
